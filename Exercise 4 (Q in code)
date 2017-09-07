@@ -1,0 +1,26 @@
+# -----------  Assignment 4---------------------------------
+
+# Analysis of  student performance in Math by downloading https://archive.ics.uci.edu/ml/datasets/student+performance datasets
+#  Q(1) Answer following questions - 
+#         a) What is average Grades for Male and Female students
+#         b) Which combination of Guardian and Sudent Gender has highest Grades for G1, G2 and G3
+
+#  Q(2) Students Absences (variable:absences) can be broken into 4/5 groups each group has same % students
+# Find average Grades for different level of absences
+
+getwd()
+setwd("D:\\MICA\\AMMA\\data_2017") 
+std_per <-read.csv(file="students.csv",head=T)
+View(std_per)
+
+#Since the original dataset is unavailable I have used a similar replacement dataset
+#Finding the average age of the class using a for loop
+sumAge <- 0
+i <- 0
+  for(i in 1:nrow(std_per))
+    {
+      sumAge <- sumAge + std_per$Age[i]
+  }
+averageAge <- sumAge/nrow(std_per)
+print("The average Age of class is: ")
+print(averageAge)
