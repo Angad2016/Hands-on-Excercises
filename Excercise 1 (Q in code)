@@ -1,0 +1,21 @@
+*Install a package data.table and give a name of function starting starting with character "d"
+*Install and load package datasets. Use women data frame availible in the package. 
+Find number of women with height more than average but weight less than average
+*Create a data frame of 15 Indian cities and their population size. You can refer to cities and population form this page
+http://www.worldatlas.com/articles/the-biggest-cities-in-india.html
+
+install.packages("data.table")
+install.packages("datasets")
+count <- 0
+nrow(women)
+for(i in 1:15)
+{
+  if
+  (women$height[i]>65.0 & women$weight[i]<136.7)
+  {
+    count<- count+1
+  }
+} 
+print(count)
+
+Excercise 3 waived off since the data link was redirecting to error
