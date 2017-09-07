@@ -1,0 +1,21 @@
+# Q(1):  Down a  csv file from https://data.oecd.org/healthstat/infant-mortality-rates.htm and read the csv file
+# And remove the last variable 
+
+
+# Q(2): Read 2 table from html page https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_cricket_rivalry
+# Find number of ODI Matches won by India
+
+
+
+
+library(rvest)
+theurl <- "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_cricket_rivalry"
+newDF<-read_html(theurl)
+tablesFrame<-html_nodes(file, "table")
+table1 <- html_table(tables[3], fill = TRUE)
+matchesWon=0
+for(i in 1:3)
+{
+  matchesWon <- matchesWon+input_wiki$India[i]
+}
+print(paste(matchesWon))
