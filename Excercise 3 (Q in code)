@@ -4,51 +4,28 @@
 #                    Gender 60% are Male in the sample (Hint runif and ifelse)
                      
 
+#Create a normally distributed variable for the income with specified mean and SD
+n_income=rnorm(10,mean=250000,sd=75000)
 
-Name <- c('angad', 'ayush', 'rajesh', 'sonu', 'pakka')
-Age <- c(22,23,24,25,26)
-MathMark <- c(24,35,34,34,34)
-ScienceMark <- c(65,67,56,78,23)
-TotalMark <- c(152,153,161,143,182)
-Bigdata <- data.frame(Name,Age,MathMark, ScienceMark, TotalMark)
-Bigdata
-View(Bigdata)
-Bigdata$TotalMark <-Bigdata$MathMark+Bigdata$ScienceMark
-View(Bigdata)
+n_income
 
-Bigdata$pct_math <- round(100*Bigdata$MathMark/Bigdata$TotalMark)
-View(Bigdata)
-Bigdata <- Bigdata[,c(2,6)]     
-View(Bigdata)
-Bigdata <- Bigdata[,c(2:6)]
-Bigdata <- Bigdata(,c())
-names_Bigdata <- names(Bigdata)
-names(Bigdata) <- c('a','b')
-View(Bigdata)
-names(Bigdata) <- names_Bigdata
-View(Bigdata)
-vector1 <- seq(1,10, by=2)
-vecttor1[3] <-100
+#Create a 'gender' vector with 10 females
+gender=c(rep("F",10))
 
-v_col <- names(Bigdata)
-v_col[3] <- "NewMaths"
-View(Bigdata)
+i=sample(1:10,10,replace=FALSE)
 
-Bigdata$Age=exp(Bigdata$Age)
+#Distribution of 60% males and 40% females done below
+for(q in 1:10){
+  if(gender[i[q]] == "F" &&  q <= 4)
+  {
+    
+  }
+  else
+    gender[i[q]] = c("M")
+}
+gender
 
-View(Bigdata)
-class(Bigdata$Name)
-Bigdata$Name <- as.character(Bigdata$Name)
-class(Bigdata$Name)
+Custs <-data.frame(ID=1:10,INCOME <- n_income, GENDER = gender)
+View(Custs)
 
 
-s1 <-Bigdata$Age>=23
-
-Bigdata <- Bigdata[s1,]
-View(Bigdata)
-
-?sample
-
-sample_Bigdata <- sample(1:nrow(Bigdata),3,replace=F)
-sample_Bigdata
-sample_Bigdata
